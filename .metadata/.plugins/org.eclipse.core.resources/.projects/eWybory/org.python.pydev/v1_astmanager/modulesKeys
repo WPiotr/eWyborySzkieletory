@@ -1,4 +1,9 @@
 MODULES_MANAGER_V2
+MainApp.__init__|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\__init__.py
+MainApp.admin|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\admin.py
+MainApp.models|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\models.py
+MainApp.tests|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\tests.py
+MainApp.views|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\views.py
 eWybory.__init__|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\eWybory\__init__.py
 eWybory.settings|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\eWybory\settings.py
 eWybory.urls|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\eWybory\urls.py

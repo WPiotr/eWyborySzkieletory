@@ -1,11 +1,11 @@
-!SESSION 2014-04-09 10:31:12.634 -----------------------------------------------
+!SESSION 2014-04-16 10:31:38.645 -----------------------------------------------
 eclipse.buildId=3.4.2.201308081805
 java.version=1.6.0_24
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pl_PL
 Command-line arguments:  -os win32 -ws win32 -arch x86
 
-!ENTRY com.aptana.shared_core 1 1 2014-04-09 10:32:33.233
+!ENTRY com.aptana.shared_core 1 1 2014-04-16 10:32:05.163
 !MESSAGE Information about process of adding new interpreter:
 - Chosen interpreter (name and file):'Tuple [python -- C:\Python27\python.exe]
 - Ok, file is non-null. Getting info on:C:\Python27\python.exe
@@ -268,7 +268,7 @@ java.lang.RuntimeException: Information about process of adding new interpreter:
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 
-!ENTRY com.aptana.shared_core 1 1 2014-04-09 10:32:34.823
+!ENTRY com.aptana.shared_core 1 1 2014-04-16 10:32:06.370
 !MESSAGE Restoring info for: C:\Python27\python.exe
 !STACK 0
 java.lang.RuntimeException: Restoring info for: C:\Python27\python.exe
@@ -283,7 +283,7 @@ Caused by: java.io.IOException: Expecting: C:\Users\Piotr\Documents\GitHub\eWybo
 	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.getInterpretersFromPersistedString(AbstractInterpreterManager.java:493)
 	... 4 more
 
-!ENTRY com.aptana.shared_core 1 1 2014-04-09 10:32:35.473
+!ENTRY com.aptana.shared_core 1 1 2014-04-16 10:32:08.461
 !MESSAGE Finished restoring information for: C:\Python27\python.exe at: C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\.metadata\.plugins\org.python.pydev\v1_258tvcdekrk5tmtf5h0ez044z
 !STACK 0
 java.lang.RuntimeException: Finished restoring information for: C:\Python27\python.exe at: C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\.metadata\.plugins\org.python.pydev\v1_258tvcdekrk5tmtf5h0ez044z
@@ -294,69 +294,8 @@ java.lang.RuntimeException: Finished restoring information for: C:\Python27\pyth
 	at org.python.pydev.ui.pythonpathconf.AbstractInterpreterPreferencesPage$3.run(AbstractInterpreterPreferencesPage.java:253)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
 
-!ENTRY com.aptana.shared_core 4 4 2014-04-09 10:32:36.091
+!ENTRY com.aptana.shared_core 4 4 2014-04-16 10:32:10.532
 !MESSAGE Info: Rebuilding internal caches: C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\.metadata\.plugins\com.python.pydev.analysis\python_v1_258tvcdekrk5tmtf5h0ez044z\python.pydevsysteminfo (Expected error to be provided and got no error!)
 
-!ENTRY com.aptana.shared_core 4 4 2014-04-09 10:44:18.422
+!ENTRY com.aptana.shared_core 4 4 2014-04-16 10:33:04.438
 !MESSAGE Info: Rebuilding internal caches: C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\.metadata\.plugins\org.eclipse.core.resources\.projects\eWybory\com.python.pydev.analysis\AdditionalProjectInterpreterInfo.pydevinfo (Expected error to be provided and got no error!)
-
-!ENTRY com.aptana.core 4 0 2014-04-09 10:44:54.693
-!MESSAGE (Build 3.4.2.201308081805) [ERROR]  Proces nie może uzyskać dostępu do pliku, ponieważ inny proces zablokował jego część
-!STACK 0
-java.io.IOException: Proces nie może uzyskać dostępu do pliku, ponieważ inny proces zablokował jego część
-	at java.io.FileInputStream.readBytes(Native Method)
-	at java.io.FileInputStream.read(Unknown Source)
-	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
-	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
-	at sun.nio.cs.StreamDecoder.read(Unknown Source)
-	at java.io.InputStreamReader.read(Unknown Source)
-	at java.io.BufferedReader.fill(Unknown Source)
-	at java.io.BufferedReader.read1(Unknown Source)
-	at java.io.BufferedReader.read(Unknown Source)
-	at java.io.Reader.read(Unknown Source)
-	at com.aptana.core.util.IOUtil.read(IOUtil.java:108)
-	at com.aptana.git.core.model.GitIndex.diffForFile(GitIndex.java:590)
-	at com.aptana.git.ui.internal.actions.CommitDialog.updateDiff(CommitDialog.java:818)
-	at com.aptana.git.ui.internal.actions.CommitDialog.access$2(CommitDialog.java:789)
-	at com.aptana.git.ui.internal.actions.CommitDialog$1.run(CommitDialog.java:189)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4140)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3757)
-	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
-	at org.eclipse.jface.window.Window.open(Window.java:801)
-	at com.aptana.git.ui.internal.actions.CommitHandler.doExecute(CommitHandler.java:34)
-	at com.aptana.git.ui.internal.actions.AbstractGitHandler.execute(AbstractGitHandler.java:108)
-	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
-	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
-	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
-	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
-	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
-	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
-	at org.eclipse.ui.menus.CommandContributionItem.handleWidgetSelection(CommandContributionItem.java:829)
-	at org.eclipse.ui.menus.CommandContributionItem.access$19(CommandContributionItem.java:815)
-	at org.eclipse.ui.menus.CommandContributionItem$5.handleEvent(CommandContributionItem.java:805)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
-	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
-	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
-	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
-	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
-	at com.aptana.rcp.IDEApplication.start(IDEApplication.java:125)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)

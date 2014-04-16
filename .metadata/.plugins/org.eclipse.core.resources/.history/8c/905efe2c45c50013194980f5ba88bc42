@@ -1,0 +1,10 @@
+from django.db import models
+
+class User (models.Model):
+    userId = models.IntegerField();
+    firstName = models.CharField(max_length=200)
+    lastName = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    login = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    

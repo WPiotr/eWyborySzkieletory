@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;eWybory/MainApp/templates/mainSite&apos; to &apos;master&apos;" description="Rename resource &apos;mainSite&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MainApp/templates/mainSite" name="master" stamp="1397640838085" updateReferences="true"/>
+</session>
