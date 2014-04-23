@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="24" version="2.0">
+<workbench progressCount="46" version="2.0">
 <workbenchAdvisor/>
 <window height="1046" maximized="true" width="960" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -18,6 +18,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="206" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.aptana.editor.css" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.aptana.editor.html" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.python.pydev.editor.PythonEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
@@ -35,6 +36,7 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
@@ -55,13 +57,17 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eWybory/MainApp/tests.py"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="com.aptana.editor.html" name="index.html" partName="index.html" path="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/templates/master/index.html" title="index.html" tooltip="eWybory/MainApp/templates/master/index.html" workbook="DefaultEditorWorkbook">
+<editor id="com.aptana.editor.html" name="index.html" partName="index.html" path="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/templates/master/index.html" title="index.html" tooltip="eWybory/MainApp/templates/master/index.html" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eWybory/MainApp/templates/master/index.html"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="61" selectionTopPixel="0"/>
 </editor>
 <editor id="org.python.pydev.editor.PythonEditor" name="admin.py" partName="admin" path="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/admin.py" title="admin" tooltip="eWybory/MainApp/admin.py" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eWybory/MainApp/admin.py"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="227" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="com.aptana.editor.css" name="style.css" partName="style.css" path="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/templates/css/style.css" title="style.css" tooltip="eWybory/MainApp/templates/css/style.css" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eWybory/MainApp/templates/css/style.css"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -71,9 +77,6 @@
 <view id="com.aptana.samples.ui.SamplesView" partName="Samples"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (1 item)"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -87,9 +90,7 @@
 </view>
 <view id="com.aptana.explorer.view" partName="App Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" GitChangedFilesFilterEnabled="" activeProject="eWybory">
-<project name="eWybory">
-<selection>
-<element path="/eWybory"/>
+<project name="eWybory">&#x0A;<selection>&#x0A;<element path="/eWybory"/>
 </selection>
 </project>
 </viewState>
@@ -106,12 +107,13 @@
 <expanded IMemento.internal.id="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/eWybory"/>
 <expanded IMemento.internal.id="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp"/>
 <expanded IMemento.internal.id="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/templates"/>
-<expanded IMemento.internal.id="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/templates/views"/>
-<selected IMemento.internal.id="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/templates/master"/>
+<expanded IMemento.internal.id="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/templates/css"/>
+<expanded IMemento.internal.id="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory/MainApp/templates/master"/>
+<selected IMemento.internal.id="C:/Users/Piotr/Documents/GitHub/eWyborySzkieletory/eWybory"/>
 </viewState>
 </view>
 </views>
-<perspectives activePart="com.aptana.editor.html" activePerspective="org.python.pydev.ui.PythonPerspective">
+<perspectives activePart="org.python.pydev.navigator.view" activePerspective="org.python.pydev.ui.PythonPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.aptana.ui.internal.WebPerspectiveFactory" id="com.aptana.ui.WebPerspective" label="Web"/>
 <alwaysOnActionSet id="com.aptana.browser.actionSet"/>
@@ -160,48 +162,35 @@
 <view id="com.aptana.samples.ui.SamplesView"/>
 <view id="com.aptana.snippets.ui.views.SnippetsView"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="left">
-<folder activePageID="com.aptana.explorer.view" appearance="2" expanded="2">
-<page content="com.aptana.explorer.view" label="App Explorer"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="left">&#x0A;<folder activePageID="com.aptana.explorer.view" appearance="2" expanded="2">&#x0A;<page content="com.aptana.explorer.view" label="App Explorer"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
 <page content="com.aptana.ui.io.remoteview" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.7495741" ratioLeft="880" ratioRight="294" relationship="2" relative="left">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.7495741" ratioLeft="880" ratioRight="294" relationship="2" relative="left">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.19931857" ratioLeft="234" ratioRight="940" relationship="2" relative="left"/>
-<info folder="true" part="terminalArea" ratio="0.7494005" ratioLeft="625" ratioRight="209" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="terminalArea" ratio="0.7494005" ratioLeft="625" ratioRight="209" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.aptana.terminal.views.terminal" label="Terminal"/>
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.pde.runtime.LogView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1d753b7" ratio="0.7494005" ratioLeft="625" ratioRight="209" relationship="4" relative="left">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1d753b7" ratio="0.7494005" ratioLeft="625" ratioRight="209" relationship="4" relative="left">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="com.aptana.samples.ui.SamplesView" label="Samples"/>
 <page content="com.aptana.snippets.ui.views.SnippetsView" label="Snippets"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
@@ -245,8 +234,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.python.pydev.navigator.view"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.python.pydev.debug.pyunit.pyUnitView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <fastViewBars>
 <fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@f55124" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
 <fastViews>
@@ -272,7 +261,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25979558" ratioLeft="305" ratioRight="869" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottom" ratio="0.87310195" ratioLeft="805" ratioRight="117" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.6605081" ratioLeft="572" ratioRight="294" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.python.pydev.debug.pyunit.pyUnitView" label="PyUnit"/>
@@ -288,7 +277,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@f55124" ratio="0.82985556" ratioLeft="517" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -311,10 +300,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.html" path="/eWybory/MainApp/templates/views/index.html"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.html" path="/eWybory/MainApp/templates/mainSite/index.html"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.html" path="/eWybory/MainApp/templates/master/index.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.css" path="/eWybory/MainApp/templates/css/style.css"/>
 </editors>
-<item historyLabel="views" index="3">
-<position info="not_deleted" x="163" y="0"/>
-</item>
 <item historyLabel="tests" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
@@ -459,8 +446,11 @@
 <item historyLabel="index.html" index="9">
 <position info="not_deleted" x="31" y="0"/>
 </item>
-<item active="true" historyLabel="index.html" index="10">
+<item historyLabel="index.html" index="10">
 <position info="not_deleted" x="61" y="0"/>
+</item>
+<item active="true" historyLabel="style.css" index="11">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -482,6 +472,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.css" name="style.css" tooltip="eWybory/MainApp/templates/css/style.css">
+<persistable path="/eWybory/MainApp/templates/css/style.css"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="admin.py" tooltip="eWybory/MainApp/admin.py">
 <persistable path="/eWybory/MainApp/admin.py"/>
 </file>
