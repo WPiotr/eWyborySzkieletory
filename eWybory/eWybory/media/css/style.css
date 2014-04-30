@@ -27,6 +27,16 @@ font-size : 110%;
 padding : 50px 50px 0 0;
 color : #000;
 }
+
+#banner h2 {
+float : left;
+margin-top : 0;
+letter-spacing : 3px;
+font-size : 110%;
+padding : 50px 50px 0 0;
+color : #000;
+}
+
 			/*TOP NAV*/
 #navbar ul {
 float : left;

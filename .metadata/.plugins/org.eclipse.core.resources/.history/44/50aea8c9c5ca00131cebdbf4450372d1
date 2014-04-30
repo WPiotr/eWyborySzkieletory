@@ -8,8 +8,7 @@
 <body>
 <div id="container">
   <div id="banner">
-   	<h2>E-Wybory</h2><br/>
-    <h1>Zaloguj się:</h1>
+    <h1>E-Wybory</h1>
   </div>
   <div id="navbar">
     <ul>
@@ -35,15 +34,15 @@
     
   </div>
   <div id="content">
-    <h2>{% block upheader %} {% endblock %}</h2>
+    <h2>Header</h2>
     <blockquote> {% block upcontent %} {% endblock %} </blockquote>
-    <h2>{% block mainheader %} {% endblock %}</h2>
+    <h2>Header</h2>
     <p> {% block maincontent %} {% endblock %} </p>
   </div>
   
   <div class="clear"></div>
-  <div id="footer" align="center">
-  	By Piotr Wyszkowski, Mateusz Muszyński, Michał Sochacki and Chrystian Kisło
+  <div id="footer">
+  	<center>By Piotr Wyszkowski, Mateusz Muszyński, Michał Sochacki and Chrystian Kisło</center>
   </div>
 </div>
 </body>

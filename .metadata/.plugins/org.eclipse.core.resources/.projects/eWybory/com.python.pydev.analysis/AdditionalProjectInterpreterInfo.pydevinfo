@@ -4,12 +4,12 @@ C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\.metadata\.plugins\org.eclips
 .v1_indexcache
 MainApp.views|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\views.py
 MainApp.__init__|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\__init__.py
-MainApp.admin|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\admin.py
 eWybory.wsgi|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\eWybory\wsgi.py
+MainApp.admin|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\admin.py
 MainApp.models|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\models.py
 MainApp.tests|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\MainApp\tests.py
-eWybory.settings|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\eWybory\settings.py
 eWybory.urls|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\eWybory\urls.py
+eWybory.settings|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\eWybory\settings.py
 manage|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\manage.py
 eWybory.__init__|0|C:\Users\Piotr\Documents\GitHub\eWyborySzkieletory\eWybory\eWybory\__init__.py
 -- END DISKCACHE
