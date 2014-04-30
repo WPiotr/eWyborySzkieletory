@@ -1,0 +1,11 @@
+{% extends "master/base.html" %}
+
+{% block upheader %}
+Lista Kandydatów
+{% endblock %}
+
+{% block upcontent %}
+
+
+
+{% endblock %}

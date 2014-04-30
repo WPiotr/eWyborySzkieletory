@@ -9,8 +9,7 @@
 <div id="container">
   <div id="banner">
    	<h2>E-Wybory</h2><br/>
-    <h1>Zaloguj się:</h1>
-    <form></form>
+    <p><h1>Zaloguj się:</h1></p>
   </div>
   <div id="navbar">
     <ul>
