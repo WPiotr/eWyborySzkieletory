@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;eWybory/MainApp/templates/views/candidatesView&apos; to &apos;candidatesView.html&apos;" description="Rename resource &apos;candidatesView&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MainApp/templates/views/candidatesView" name="candidatesView.html" stamp="1398849034420" updateReferences="true"/>
-</session>

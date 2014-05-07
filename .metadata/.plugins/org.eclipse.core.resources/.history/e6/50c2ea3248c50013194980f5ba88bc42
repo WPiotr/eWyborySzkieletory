@@ -1,4 +1,0 @@
-from django.shortcuts import render_to_response
-def index():
-    local = locals();
-    return render_to_response('Media/Views/index.html', {'local' : local})
