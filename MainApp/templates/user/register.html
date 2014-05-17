@@ -5,8 +5,12 @@
 {% endblock %}
 
 {% block upcontent %}
-<form method="post" action="">
+<form method="post" action="/user/registerUser/">
 	<table>
+		<tr>
+			<td><label>Login:</label></td>
+			<td><input type="text" name="userName" /></td>
+		</tr>
 		<tr>
 			<td><label>Imie:</label></td>
 			<td><input type="text" name="firstName" /></td>
@@ -19,12 +23,12 @@
 		
 		<tr>
 			<td><label>Hasło:</label></td>
-			<td><input type="text" name="password" /></td>
+			<td><input type="password" name="password" /></td>
 		</tr>
 		
 		<tr>
 			<td><label>Potwierdź hasło:</label></td>
-			<td><input type="text" name="secPassword" /></td>
+			<td><input type="password" name="secPassword" /></td>
 		</tr>
 		
 		<tr>

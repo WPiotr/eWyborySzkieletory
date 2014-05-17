@@ -1,41 +1,18 @@
 # -*- coding: UTF-8 -*-
 from django.shortcuts import render_to_response
+<<<<<<< HEAD
 from MainApp.models import *
 from django.contrib.auth.models import User
 import sys
+=======
+from django.contrib.auth.models import User
+from django.contrib.auth import logout
+from django.contrib.auth.models import auth
+
+>>>>>>> 547e3cf9448f3d11a5b891e17daf156fe9634ac7
 def index(request):
     return render_to_response('views/index.html')
 def register(request):
-    e = Elections.objects.filter(name='Test3')
-    u1 = User.objects.filter(username='123')
-    u2 = User.objects.filter(username='1234')
-    c = Candidate.objects.filter()
-    e = e[0]
-    u1 = u1[0]
-    u2 = u2[0]
-    c = c[0]
-    print >>sys.stderr, ' '+ str(e.getVoteCount(c))
-    if(e.canVote(u1)):
-        try:
-            print >>sys.stderr, 'Użytkownik 1 stara się głosować!'
-            e.vote(user=u1,candidate=c)
-            print >>sys.stderr, 'Użytkownik 1 zagłosował!'
-        except Exception as ex:
-            print >>sys.stderr, 'Użytkownik 1 nie zagłosował bo!'
-            print '%s' % (ex.message)
-    else:
-        print >>sys.stderr, 'Użytkownik 2 nie zagłosował bo tak!'
-    if(e.canVote(u2)):
-        try:
-            print >>sys.stderr, 'Użytkownik 2 stara się głosować!'
-            e.vote(user=u1,candidate=c)
-            print >>sys.stderr, 'Użytkownik 2 zagłosował!'
-        except Exception as ex:
-            print >>sys.stderr, 'Użytkownik 2 nie zagłosował bo!'
-            print '%s' % (ex.message)
-    else:
-        print >>sys.stderr, 'Użytkownik 2 nie zagłosował bo tak!'
-    print >>sys.stderr, 'Goodbye, cruel world!'
     return render_to_response('user/register.html')
 
 def profile(request):
@@ -50,3 +27,30 @@ def activeElections(request):
 def inactiveElections(request):
     return render_to_response('election/inactiveElectionsList.html')
 
+def registerUser(request):
+    if request.method == 'POST':
+        if request.POST['password'] == request.POST['secPassword']:
+            if request.POST['email'] == request.POST['secEmail']:
+                
+                user = User.objects.create_user(username=request.POST['userName'], email=request.POST['email'], password=request.POST['password'])
+                user.first_name = request.POST['firstName']
+                user.last_name = request.POST['lastName']
+                user.save()
+                
+                user = auth.authenticate(username=request.POST['userName'], password=request.POST['password'])
+                auth.login(request, user)
+                
+    return render_to_response('/', {'local': locals()})
+    
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username,password=password)                              
+        if user is not None and user.is_active:
+            auth.login(request, user)
+            return render_to_response('/', {'local': locals()})
+        else:
+            request.session['bad_login'] = 1
+            return render_to_response('aboutus/aboutus.html')
+                       
