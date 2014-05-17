@@ -18,4 +18,6 @@ urlpatterns = patterns('',
     (r'^election/inactiveList/$','MainApp.views.inactiveElections'),
     (r'^user/profile/$','MainApp.views.profile'),
     (r'^user/register/$','MainApp.views.register'),
+    (r'^user/registerUser/$','MainApp.views.registerUser'),
+    
 )
