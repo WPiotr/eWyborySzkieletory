@@ -51,6 +51,7 @@ class Elections (models.Model):
         
     def vote(self, user, candidate):
         """
+        @user: User
         Użytkownik podany w parametrze głosuje na kandydata podanego w parametrze w bierzących wyborach
         @param User user - sprawdzany użytkownik 
         """
@@ -67,7 +68,7 @@ class Elections (models.Model):
         @param User user - sprawdzany użytkownik
         @return int - liczbę głosów oddanych na kandydata w danych wyborach 
         """
-        return UserVote.objects.filter(elections=self,candidate=candidate)
+        return UserVote.objects.filter(elections=self,candidate=candidate).count()
 
 
 class Candidate(models.Model):
