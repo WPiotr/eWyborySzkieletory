@@ -1,31 +1,22 @@
 from django.db import models
-
-class User (models.Model):
-    firstName = models.CharField(max_length=200)
-    lastName = models.CharField(max_length=200)
-    password = models.CharField(max_length=200)
-    login = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
+from django.contrib.auth.models import User
     
 class Elections (models.Model):
     name = models.CharField(max_length=200)
     type = models.CharField(max_length=200)
-    userID = models.ForeignKey(User)
-    allowedVotes = models.IntegerField()
-    startElections = models.DateField()
-    endElections = models.DateField()
+    whitelist = models.ManyToManyField(User)
+    allowed_votes_count = models.IntegerField()
+    start_elections = models.DateField()
+    end_elections = models.DateField()
 
-class Candidate(models.Model):
-    firstName = models.CharField(max_length=200)
-    lastName = models.CharField(max_length=200)
+class Candidate(User):
     description = models.CharField(max_length=200)
     
 class UserVote(models.Model):
     userID = models.ForeignKey(User)
-    voted = models.BooleanField()
-    allowed = models.BooleanField()
     electionsID = models.ForeignKey(Elections)
     
 class electionsCandidate(models.Model):
     electionsID = models.ForeignKey(Elections)
-    candidateID = models.ForeignKey(Candidate) 
+    candidateID = models.ForeignKey(Candidate)
+    voteCount = models.IntegerField()
