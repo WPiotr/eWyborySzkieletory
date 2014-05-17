@@ -1,9 +1,46 @@
 {% extends "master/base.html" %}
 
 {% block upheader %}
-Witaj na stronie E-Wybory
+<label>Rejestracja</label>
 {% endblock %}
 
 {% block upcontent %}
-Aby zagłosować w wyborach proszę się zalogować.
+<form method="post" action="">
+	<table>
+		<tr>
+			<td><label>Imie:</label></td>
+			<td><input type="text" name="firstName" /></td>
+		</tr>
+		
+		<tr>
+			<td><label>Nazwisko:</label></td>
+			<td><input type="text" name="lastName" /></td>
+		</tr>
+		
+		<tr>
+			<td><label>Hasło:</label></td>
+			<td><input type="text" name="password" /></td>
+		</tr>
+		
+		<tr>
+			<td><label>Potwierdź hasło:</label></td>
+			<td><input type="text" name="secPassword" /></td>
+		</tr>
+		
+		<tr>
+			<td><label>Email:</label></td>
+			<td><input type="text" name="email" /></td>
+		</tr>
+		
+		<tr>
+			<td><label>Potwierdź Email:</label></td>
+			<td><input type="text" name="secEmail" /></td>
+		</tr>
+		
+		<tr>
+			<td><input type="submit" value="OK" /></td>
+			<td><input type="reset" value="Wyczyść" /></td>		
+		</tr>
+	</table>
+</form>
 {% endblock %}

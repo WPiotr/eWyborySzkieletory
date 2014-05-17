@@ -1,9 +1,55 @@
 {% extends "master/base.html" %}
 
 {% block upheader %}
-Witaj na stronie E-Wybory
+
+<script type="text/javascript" src="/static/javaScript/userProfile.js"></script>
+
+Profil Użytkownika
 {% endblock %}
 
 {% block upcontent %}
-Aby zagłosować w wyborach proszę się zalogować.
+	<form action="" method="post">
+		<table>
+			<tr>
+				<td><label>Imie:</label></td>
+				<td><input type="text" name="firstName" /></td>
+			</tr>
+			
+			<tr>
+				<td><label>Nazwisko:</label></td>
+				<td><input type="text" name="lastName" /></td>
+			</tr>
+		</table>
+		<table id="passBar">
+			<tr>
+				<td><label>Hasło:</label></td>
+				<td><input type="text" name="password" /></td>
+			</tr>
+			
+			<tr>
+				<td><label>Potwierdź hasło:</label></td>
+				<td><input type="text" name="secPassword" /></td>
+			</tr>
+		</table>
+		<table id="emailBar">
+			<tr>
+				<td><label>Email:</label></td>
+				<td><input type="text" name="email" /></td>
+			</tr>
+			
+			<tr>
+				<td><label>Potwierdź Email:</label></td>
+				<td><input type="text" name="secEmail" /></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td><a id="changePass">Zmien haslo</a></td>
+				<td><a id="changeEmail">Zmien email</a></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Zatwierdź" /></td>
+			</tr>
+		</table>
+	</form>
 {% endblock %}

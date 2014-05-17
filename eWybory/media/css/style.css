@@ -19,6 +19,7 @@ margin-top : 0;
 height : 130px;
 background : #5a8f57 url(images/orb.png) no-repeat right center;
 }
+
 #banner h1 {
 float : right;
 margin-top : 0;
@@ -28,11 +29,31 @@ padding : 50px 50px 0 0;
 color : #000;
 }
 
+#banner form{
+	font-size: 110%;
+	float: right;
+	margin: 5px 5px 5px 5px;
+}
+
+#banner a{
+	font-size: 110%;
+	float: right;
+	margin: 5px 5px 5px 5px;
+	color: black;
+}
+
+#banner input{
+	background-color: green;
+	border-style: dotted;
+	
+}
+
 #banner h2 {
 float : left;
 margin-top : 0;
+margin-left: 5px;
 letter-spacing : 3px;
-font-size : 110%;
+font-size : 200%;
 padding : 50px 50px 0 0;
 color : #000;
 }
@@ -53,7 +74,7 @@ color : #000;
 }
 #navbar a {
 float : left;
-width : 6em;
+width : 10em;
 text-decoration : none;
 color : #000;
 background : #92cc8f url(images/square.gif) no-repeat left center;
@@ -72,12 +93,19 @@ width : 500px;
 padding : 1em;
 margin-left : 230px;
 }
+#content h2{
+	font-size: 200%;
+	
+}
 			/*SIDEBAR*/
 #sidebar {
 float : left;
 width : 200px;
 padding : 1em;
 margin-top : 0;
+background-color: darkseagreen;
+border-style: inherit;
+height: 300px;
 }
 			/*BOTTOM*/
 #bottom {
