@@ -1,15 +1,13 @@
 # -*- coding: UTF-8 -*-
 from django.shortcuts import render_to_response
-<<<<<<< HEAD
 from MainApp.models import *
 from django.contrib.auth.models import User
 import sys
-=======
+
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 from django.contrib.auth.models import auth
 
->>>>>>> 547e3cf9448f3d11a5b891e17daf156fe9634ac7
 def index(request):
     return render_to_response('views/index.html')
 def register(request):
