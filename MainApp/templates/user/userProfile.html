@@ -4,7 +4,7 @@
 
 <script type="text/javascript" src="/static/javaScript/userProfile.js"></script>
 
-Profil Użytkownika
+Profil Użytkownika 
 {% endblock %}
 
 {% block upcontent %}
@@ -12,27 +12,43 @@ Profil Użytkownika
 	<form action="" method="post">
 		<table>
 			<tr>
+				<td><label>Login:</label></td>
+				<td><input required="required" type="text" name="login" value="{{local.request.user.username}}" /></td>
+			</tr>
+			
+			<tr>
 				<td><label>Imie:</label></td>
-				<td><input required="required" type="text" name="firstName" value="" /></td>
+				<td><input required="required" type="text" name="firstName" value="{{local.request.user.first_name}}" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Nazwisko:</label></td>
-				<td><input required="required" type="text" name="lastName" /></td>
+				<td><input required="required" type="text" name="lastName" value="{{local.request.user.first_name}}" /></td>
 			</tr>
 		</table>
 		<table id="passBar">
 			<tr>
-				<td><label>Hasło:</label></td>
-				<td><input required="required" type="text" name="password" /></td>
+				<td><label>Stare hasło:</label></td>
+				<td><input required="required" type="password" name="oldpassword" /></td>
+			</tr>
+			
+			<tr>
+				<td><label>Nowe Hasło:</label></td>
+				<td><input required="required" type="password" name="password" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Potwierdź hasło:</label></td>
-				<td><input required="required" type="text" name="secPassword" /></td>
+				<td><input required="required" type="password" name="secPassword" /></td>
 			</tr>
 		</table>
 		<table id="emailBar">
+			
+			<tr>
+				<td><label>Stary email:</label></td>
+				<td><input required="required" type="email" name="oldemail" /></td>
+			</tr>
+			
 			<tr>
 				<td><label>Email:</label></td>
 				<td><input required="required" type="email" name="email" /></td>
@@ -40,7 +56,7 @@ Profil Użytkownika
 			
 			<tr>
 				<td><label>Potwierdź Email:</label></td>
-				<td><input required="required" type="text" name="secEmail" /></td>
+				<td><input required="required" type="email" name="secEmail" /></td>
 			</tr>
 		</table>
 		<table>
