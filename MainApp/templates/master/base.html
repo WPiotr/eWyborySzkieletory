@@ -56,7 +56,6 @@
     <h2>Aktywne Wybory:</h2>
     <div class="navlist">
       <ul>
-        <li>Lista Aktywnych wyborów</li>
         {% for election in elections %}
         <li><a href="/election/electionView/{{ election.id }}"> {{ election.name }} </a></li>
         {% endfor %}
