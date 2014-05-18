@@ -1,9 +1,9 @@
 {% extends "master/base.html" %}
 
 {% block upheader %}
-{% election.name %} {%candidate.elections%}{%candidate.candidate%}
-{% endblock %}
+Wybory {{ election.name }} na {{ election.type }}
+{% endblock %} 
 
 {% block upcontent %}
-
+{% for Candidate in cand_list %}{{Candidate}}<br>{% endfor %}
 {% endblock %}
