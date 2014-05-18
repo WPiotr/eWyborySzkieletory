@@ -1,0 +1,20 @@
+{% extends "master/base.html" %}
+
+{% block upheader %}
+Głosowanie w wyborach {{ election.allowed_votes_count }} na {{ election.name }}
+{% endblock %} 
+
+{% block upcontent %}
+<form method="post" action="/user/electionVote/">
+	<table>
+		{% for Candidate in cand_list %}
+		<tr><td><input type="checkbox" name="candidate_id" value="vote"/>{{Candidate.candidate.user.first_name}} {{Candidate.candidate.user.last_name}}</td></tr>
+		<br>{% endfor %}
+		<tr>
+			<td><input type="submit" value="OK" /></td>
+			<td><input type="reset" value="Wyczyść" /></td>		
+		</tr>
+	</table>
+</form>
+{% endblock %}
+<!--{{Candidate.candidate.user.first_name}} {{Candidate.candidate.user.last_name}}-->
