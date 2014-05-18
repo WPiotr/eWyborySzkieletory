@@ -68,7 +68,22 @@ def login(request):
             return redirect('/')
         else:
             request.session['bad_login'] = 1
-            return render_to_response('/views/aboutus.html',{'local': locals(), 'elections': elections})
+            return render_to_response('views/aboutUs.html',{'local': locals(), 'elections': elections})
+
+def editProfile(request):
+    elections = getActiveElections()
+    user = request.user
+    user.username = request.POST['login']
+    user.first_name = request.POST['firstName']
+    user.last_name = request.POST['lastName']
+    user.email = request.POST['email']
+    if request.POST['password'] is not None and request.POST['password'] == request.POST['secPassword']:
+        user.set_password(str(request.POST['password']))
+    if user.email == request.POST['oldEmail']:
+        if request.POST['email'] is not None and request.POST['email'] == request.POST['secEmail']:
+            user.email = request.POST['email']
+    user.save()
+    return redirect('/user/profile/',{'local': locals(), 'elections': elections})
 
 def getActiveElections():
     now = datetime.datetime.utcnow().replace(tzinfo=utc)

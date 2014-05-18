@@ -9,7 +9,7 @@ Profil Użytkownika
 
 {% block upcontent %}
 {% if local.request.user.is_authenticated %}
-	<form action="" method="post">
+	<form action="/user/editProfile/" method="post">
 		<table>
 			<tr>
 				<td><label>Login:</label></td>
@@ -23,40 +23,40 @@ Profil Użytkownika
 			
 			<tr>
 				<td><label>Nazwisko:</label></td>
-				<td><input required="required" type="text" name="lastName" value="{{local.request.user.first_name}}" /></td>
+				<td><input required="required" type="text" name="lastName" value="{{local.request.user.last_name}}" /></td>
 			</tr>
 		</table>
 		<table id="passBar">
 			<tr>
 				<td><label>Stare hasło:</label></td>
-				<td><input required="required" type="password" name="oldpassword" /></td>
+				<td><input type="password" name="oldPassword" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Nowe Hasło:</label></td>
-				<td><input required="required" type="password" name="password" /></td>
+				<td><input type="password" name="password" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Potwierdź hasło:</label></td>
-				<td><input required="required" type="password" name="secPassword" /></td>
+				<td><input type="password" name="secPassword" /></td>
 			</tr>
 		</table>
 		<table id="emailBar">
 			
 			<tr>
 				<td><label>Stary email:</label></td>
-				<td><input required="required" type="email" name="oldemail" /></td>
+				<td><input type="email" name="oldEmail" value="" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Email:</label></td>
-				<td><input required="required" type="email" name="email" /></td>
+				<td><input type="email" name="email" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Potwierdź Email:</label></td>
-				<td><input required="required" type="email" name="secEmail" /></td>
+				<td><input type="email" name="secEmail" /></td>
 			</tr>
 		</table>
 		<table>

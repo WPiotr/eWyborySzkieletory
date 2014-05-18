@@ -22,4 +22,5 @@ urlpatterns = patterns('',
     (r'^views/aboutUs/$','MainApp.views.aboutUs'),
     (r'^accounts/login/$','MainApp.views.login'),
     (r'^accounts/logout/$', 'django.contrib.auth.views.logout',{'next_page': '/'}),
+    (r'^user/editProfile/$','MainApp.views.editProfile'),
 )
