@@ -18,8 +18,11 @@ def profile(request):
 
 def electionView(request):
     #ele_id = request.GET('eid')
-    cand_id = request.GET('cid')
-    print cand_id
+    #cand_id = request.GET('cid')
+    cand = Candidate.objects.get(id=1)
+    print cand.user.first_name
+    elecand = electionsCandidate.objects.get(id=1)
+    print elecand.elections.type
     #ele = Elections.objects.get(id=int(ele_id))
     #cand = electionsCandidate.objects.get(id=int(cand_id))
     return render_to_response('election/electionView.html')#,{'election':ele, 'candidate':cand})
