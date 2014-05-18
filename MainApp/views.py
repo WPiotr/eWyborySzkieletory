@@ -42,22 +42,20 @@ def activeElections(request):
 
 def inactiveElections(request):
     elections = getActiveElections()
-    return render_to_response('election/inactiveElectionsList.html',{'local': locals(), 'elections': elections})
+    inactive_elections = getInActiveElections()
+    return render_to_response('election/inactiveElectionsList.html',{'local': locals(), 'elections': elections, 'inactive_elections': inactive_elections})
 
 def registerUser(request):
     elections = getActiveElections()
     if request.method == 'POST':
         if request.POST['password'] == request.POST['secPassword']:
             if request.POST['email'] == request.POST['secEmail']:
-                
                 user = User.objects.create_user(username=request.POST['userName'], email=request.POST['email'], password=request.POST['password'])
                 user.first_name = request.POST['firstName']
                 user.last_name = request.POST['lastName']
                 user.save()
-                
                 user = auth.authenticate(username=request.POST['userName'], password=request.POST['password'])
                 auth.login(request, user)
-                
     return redirect('/')
 
 def login(request):
@@ -73,8 +71,12 @@ def login(request):
             request.session['bad_login'] = 1
             return render_to_response('/views/aboutus.html',{'local': locals(), 'elections': elections})
 
-
 def getActiveElections():
+    now = datetime.datetime.utcnow().replace(tzinfo=utc)
+    elections = Elections.objects.extra(where=['end_elections>%s', 'start_elections<%s'], params=[now,now])
+    return elections
+
+def getInActiveElections():
     now = datetime.datetime.utcnow().replace(tzinfo=utc)
     elections = Elections.objects.extra(where=['end_elections>%s', 'start_elections<%s'], params=[now,now])
     return elections
