@@ -32,10 +32,20 @@ def electionView(request):
     return render_to_response('election/electionView.html',{'cand_list':candidate_list, 'election':ele})
 
 def activeElections(request):
-    return render_to_response('election/activeElectionsList.html',{'local': locals()})
+    all_Elections = Elections.objects.all()
+    active_Elections = list()
+    for election in all_Elections :
+        if election.isActive() :
+            active_Elections.append(election)
+    return render_to_response('election/activeElectionsList.html',{'local': locals()}, {'active_Elections': active_Elections})
 
 def inactiveElections(request):
-    return render_to_response('election/inactiveElectionsList.html',{'local': locals()})
+    all_Elections = Elections.objects.all()
+    inactive_Elections = list()
+    for election in all_Elections :
+        if not election.isActive() :
+            inactive_Elections.append(election)
+    return render_to_response('election/inactiveElectionsList.html',{'local': locals()}, {'inactive_Elections': inactive_Elections})
 
 def registerUser(request):
     if request.method == 'POST':
