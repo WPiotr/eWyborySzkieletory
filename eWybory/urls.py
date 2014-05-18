@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
     (r'^$','MainApp.views.index'),
-    (r'^election/electionView/$','MainApp.views.electionView'),
+    (r'^election/electionView/(?P<election>\d+)/$','MainApp.views.electionView'),
     (r'^election/activeList/$','MainApp.views.activeElections'),
     (r'^election/inactiveList/$','MainApp.views.inactiveElections'),
     (r'^user/profile/$','MainApp.views.profile'),
