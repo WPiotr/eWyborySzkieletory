@@ -1,20 +1,19 @@
-# -*- coding: UTF-8 -*-
-from django.shortcuts import render_to_response
-from MainApp.models import *
-from django.contrib.auth.models import User
-import sys
+from django.contrib.auth.views import logout
+from django.contrib.auth.models import User, auth
+from django.shortcuts import render_to_response, redirect
 
-from django.contrib.auth.models import User
-from django.contrib.auth import logout
-from django.contrib.auth.models import auth
 
 def index(request):
-    return render_to_response('views/index.html')
+    return render_to_response('views/index.html',{'local': locals()})
+
+def aboutUs(request):
+    return render_to_response('views/aboutUs.html',{'local': locals()})
+
 def register(request):
-    return render_to_response('user/register.html')
+    return render_to_response('user/register.html',{'local': locals()})
 
 def profile(request):
-    return render_to_response('user/userProfile.html')
+    return render_to_response('user/userProfile.html',{'local': locals()})
 
 def electionView(request):
     #ele_id = request.GET('eid')
@@ -32,10 +31,10 @@ def electionView(request):
     return render_to_response('election/electionView.html',{'cand_list':candidate_list, 'election':ele})
 
 def activeElections(request):
-    return render_to_response('election/activeElectionsList.html')
+    return render_to_response('election/activeElectionsList.html',{'local': locals()})
 
 def inactiveElections(request):
-    return render_to_response('election/inactiveElectionsList.html')
+    return render_to_response('election/inactiveElectionsList.html',{'local': locals()})
 
 def registerUser(request):
     if request.method == 'POST':
@@ -50,17 +49,17 @@ def registerUser(request):
                 user = auth.authenticate(username=request.POST['userName'], password=request.POST['password'])
                 auth.login(request, user)
                 
-    return render_to_response('/', {'local': locals()})
+    return redirect('/')
     
 def login(request):
     if request.method == 'POST':
-        username = request.POST['username']
+        username = request.POST['login']
         password = request.POST['password']
         user = auth.authenticate(username=username,password=password)                              
         if user is not None and user.is_active:
             auth.login(request, user)
-            return render_to_response('/', {'local': locals()})
+            return redirect('/')
         else:
             request.session['bad_login'] = 1
-            return render_to_response('aboutus/aboutus.html')
+            return render_to_response('/views/aboutus.html',{'local': locals()})
                        
