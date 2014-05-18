@@ -57,7 +57,9 @@
     <div class="navlist">
       <ul>
         <li>Lista Aktywnych wyborów</li>
-        <li><a>asdasd</a></li>
+        {% for election in elections %}
+        <li><a href="/election/electionView/?election={{ election.id }}"> {{ election.name }} </a></li>
+        {% endfor %}
       </ul>
     </div>
     

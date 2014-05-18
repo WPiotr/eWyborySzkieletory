@@ -1,19 +1,24 @@
 from django.contrib.auth.views import logout
 from django.contrib.auth.models import User, auth
 from django.shortcuts import render_to_response, redirect
+from MainApp.models import Elections
 
 
 def index(request):
-    return render_to_response('views/index.html',{'local': locals()})
+    elections = Elections.objects.all()
+    return render_to_response('views/index.html',{'local': locals(), 'elections': elections})
 
 def aboutUs(request):
-    return render_to_response('views/aboutUs.html',{'local': locals()})
+    elections = Elections.objects.all()
+    return render_to_response('views/index.html',{'local': locals(), 'elections': elections})
 
 def register(request):
-    return render_to_response('user/register.html',{'local': locals()})
+    elections = Elections.objects.all()
+    return render_to_response('user/register.html',{'local': locals(), 'elections': elections})
 
 def profile(request):
-    return render_to_response('user/userProfile.html',{'local': locals()})
+    elections = Elections.objects.all()
+    return render_to_response('user/userProfile.html',{'local': locals(), 'elections': elections})
 
 def electionView(request):
     #ele_id = request.GET('eid')
@@ -21,15 +26,19 @@ def electionView(request):
     print cand_id
     #ele = Elections.objects.get(id=int(ele_id))
     #cand = electionsCandidate.objects.get(id=int(cand_id))
-    return render_to_response('election/electionView.html')#,{'election':ele, 'candidate':cand})
+    elections = Elections.objects.all()
+    return render_to_response('election/electionView.html',{'local': locals(), 'elections': elections})#,{'election':ele, 'candidate':cand})
 
 def activeElections(request):
-    return render_to_response('election/activeElectionsList.html',{'local': locals()})
+    elections = Elections.objects.all()
+    return render_to_response('election/activeElectionsList.html',{'local': locals(), 'elections': elections})
 
 def inactiveElections(request):
-    return render_to_response('election/inactiveElectionsList.html',{'local': locals()})
+    elections = Elections.objects.all()
+    return render_to_response('election/inactiveElectionsList.html',{'local': locals(), 'elections': elections})
 
 def registerUser(request):
+    elections = Elections.objects.all()
     if request.method == 'POST':
         if request.POST['password'] == request.POST['secPassword']:
             if request.POST['email'] == request.POST['secEmail']:
@@ -45,6 +54,7 @@ def registerUser(request):
     return redirect('/')
     
 def login(request):
+    elections = Elections.objects.all()
     if request.method == 'POST':
         username = request.POST['login']
         password = request.POST['password']
@@ -54,5 +64,5 @@ def login(request):
             return redirect('/')
         else:
             request.session['bad_login'] = 1
-            return render_to_response('/views/aboutus.html',{'local': locals()})
+            return render_to_response('/views/aboutus.html',{'local': locals(), 'elections': elections})
                        
