@@ -16,7 +16,12 @@ def profile(request):
     return render_to_response('user/userProfile.html',{'local': locals()})
 
 def electionView(request):
-    return render_to_response('election/electionView.html',{'local': locals()})
+    #ele_id = request.GET('eid')
+    cand_id = request.GET('cid')
+    print cand_id
+    #ele = Elections.objects.get(id=int(ele_id))
+    #cand = electionsCandidate.objects.get(id=int(cand_id))
+    return render_to_response('election/electionView.html')#,{'election':ele, 'candidate':cand})
 
 def activeElections(request):
     return render_to_response('election/activeElectionsList.html',{'local': locals()})
@@ -51,4 +56,3 @@ def login(request):
             request.session['bad_login'] = 1
             return render_to_response('/views/aboutus.html',{'local': locals()})
                        
-
