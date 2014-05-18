@@ -19,13 +19,17 @@ def profile(request):
 def electionView(request):
     #ele_id = request.GET('eid')
     #cand_id = request.GET('cid')
-    cand = Candidate.objects.get(id=1)
-    print cand.user.first_name
-    elecand = electionsCandidate.objects.get(id=1)
+    candidate_list = []
+    ele = Elections.objects.get(id=1)
+    elecand = electionsCandidate.objects.get(id=2)
     print elecand.elections.type
+    temp = electionsCandidate.objects.all()
+    for i in temp:
+        if i.elections.id == ele.id:
+            candidate_list.append(i)
     #ele = Elections.objects.get(id=int(ele_id))
     #cand = electionsCandidate.objects.get(id=int(cand_id))
-    return render_to_response('election/electionView.html')#,{'election':ele, 'candidate':cand})
+    return render_to_response('election/electionView.html',{'cand_list':candidate_list, 'election':ele})
 
 def activeElections(request):
     return render_to_response('election/activeElectionsList.html')
