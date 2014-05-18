@@ -30,6 +30,19 @@ class Elections (models.Model):
     def __unicode__(self):
         return '%s' % (self.name)
     
+    def isActive(self):
+        """
+        Sprawdza czy wybory sa aktywne
+        @return: bool - false jeżeli wybory sie zakonczyly, true w przeciwnym wypadku
+        """
+        now = datetime.datetime.utcnow().replace(tzinfo=utc)
+        if((self.end_elections - now).total_seconds() < 0):
+            return False
+        if((self.start_elections - now).total_seconds() > 0):
+            return False
+        return True
+    
+    
     def canVote(self, user):
         """
         Sprawdza czy użytkownika może brać udział w tych głosowaniach
