@@ -4,4 +4,9 @@
 {% endblock %}
 
 {% block upcontent %}
+
+{% for election in elections %}
+<li><a href="/election/electionView/?election={{ election.id }}">{{ election.name }}</a></li>
+{% endfor %}
+
 {% endblock %}
