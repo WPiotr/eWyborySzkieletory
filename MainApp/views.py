@@ -5,7 +5,6 @@ from django.contrib.auth.views import logout
 from django.shortcuts import render_to_response, redirect
 from django.utils.timezone import utc
 from models import Elections, electionsCandidate
-from setuptools.package_index import local_open
 import datetime
 import sys
 
