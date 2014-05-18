@@ -2,6 +2,7 @@ from django.contrib.auth.views import logout
 from django.contrib.auth.models import User, auth
 from django.shortcuts import render_to_response, redirect
 from MainApp.models import Elections
+from models import Elections, electionsCandidate
 
 
 def index(request):
@@ -22,12 +23,19 @@ def profile(request):
 
 def electionView(request):
     #ele_id = request.GET('eid')
-    cand_id = request.GET('cid')
-    print cand_id
+    #cand_id = request.GET('cid')
+    elections = Elections.objects.all()
+    candidate_list = []
+    ele = Elections.objects.get(id=1)
+    elecand = electionsCandidate.objects.get(id=2)
+    print elecand.elections.type
+    temp = electionsCandidate.objects.all()
+    for i in temp:
+        if i.elections.id == ele.id:
+            candidate_list.append(i)
     #ele = Elections.objects.get(id=int(ele_id))
     #cand = electionsCandidate.objects.get(id=int(cand_id))
-    elections = Elections.objects.all()
-    return render_to_response('election/electionView.html',{'local': locals(), 'elections': elections})#,{'election':ele, 'candidate':cand})
+    return render_to_response('election/electionView.html',{'local': locals(),'cand_list':candidate_list, 'election':ele, 'elections': elections})
 
 def activeElections(request):
     elections = Elections.objects.all()
