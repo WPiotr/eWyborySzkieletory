@@ -1,6 +1,7 @@
 from django.contrib.auth.views import logout
 from django.contrib.auth.models import User, auth
 from django.shortcuts import render_to_response, redirect
+from models import Elections, electionsCandidate
 
 
 def index(request):
