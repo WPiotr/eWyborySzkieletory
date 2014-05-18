@@ -8,38 +8,39 @@ Profil Użytkownika
 {% endblock %}
 
 {% block upcontent %}
+{% if local.request.user.is_authenticated %}
 	<form action="" method="post">
 		<table>
 			<tr>
 				<td><label>Imie:</label></td>
-				<td><input type="text" name="firstName" /></td>
+				<td><input required="required" type="text" name="firstName" value="" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Nazwisko:</label></td>
-				<td><input type="text" name="lastName" /></td>
+				<td><input required="required" type="text" name="lastName" /></td>
 			</tr>
 		</table>
 		<table id="passBar">
 			<tr>
 				<td><label>Hasło:</label></td>
-				<td><input type="text" name="password" /></td>
+				<td><input required="required" type="text" name="password" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Potwierdź hasło:</label></td>
-				<td><input type="text" name="secPassword" /></td>
+				<td><input required="required" type="text" name="secPassword" /></td>
 			</tr>
 		</table>
 		<table id="emailBar">
 			<tr>
 				<td><label>Email:</label></td>
-				<td><input type="text" name="email" /></td>
+				<td><input required="required" type="email" name="email" /></td>
 			</tr>
 			
 			<tr>
 				<td><label>Potwierdź Email:</label></td>
-				<td><input type="text" name="secEmail" /></td>
+				<td><input required="required" type="text" name="secEmail" /></td>
 			</tr>
 		</table>
 		<table>
@@ -52,4 +53,7 @@ Profil Użytkownika
 			</tr>
 		</table>
 	</form>
+{% else %}
+	<div id="redirect"></div>
+{% endif %}
 {% endblock %}

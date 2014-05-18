@@ -11,7 +11,7 @@ def index(request):
 
 def aboutUs(request):
     elections = Elections.objects.all()
-    return render_to_response('views/index.html',{'local': locals(), 'elections': elections})
+    return render_to_response('views/aboutUs.html',{'local': locals(), 'elections': elections})
 
 def register(request):
     elections = Elections.objects.all()
