@@ -1,9 +1,13 @@
 {% extends "master/base.html" %}
+{% load chartkick %}
 
 {% block upheader %}
 Wybory {{ election.name }} na {{ election.type }}
+       <script src="http://www.google.com/jsapi"></script>
+<script src="/static/chartkick.js"></script>
 {% endblock %} 
 
 {% block upcontent %}
 {% for Candidate in cand_list %}{{Candidate}}<br>{% endfor %}
+{% pie_chart chartList with library=library %}
 {% endblock %}

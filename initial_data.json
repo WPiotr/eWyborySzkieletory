@@ -4,8 +4,8 @@
 	"model": "auth.user", 
 	"fields": {
 		"username": "user1", 
-		"first_name": "", 
-		"last_name": "", 
+		"first_name": "Name1", 
+		"last_name": "LastName1", 
 		"is_active": true, 
 		"is_superuser": false, 
 		"is_staff": false, 
@@ -22,8 +22,8 @@
 	"model": "auth.user", 
 	"fields": {
 		"username": "user2", 
-		"first_name": "", 
-		"last_name": "", 
+		"first_name": "Name2", 
+		"last_name": "LastName2", 
 		"is_active": true, 
 		"is_superuser": false, 
 		"is_staff": false, 
@@ -40,8 +40,8 @@
 	"model": "auth.user", 
 	"fields": {
 		"username": "user3", 
-		"first_name": "", 
-		"last_name": "", 
+		"first_name": "Name3", 
+		"last_name": "LastName3", 
 		"is_active": true, 
 		"is_superuser": false, 
 		"is_staff": false, 

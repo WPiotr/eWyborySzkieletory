@@ -67,8 +67,10 @@ MEDIA_URL = ''
 # Example: "/var/www/example.com/static/"
 STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
 STATIC_URL = '/static/'
+import chartkick  # @UnresolvedImport
 STATICFILES_DIRS = (
     os.path.join(ROOT_PATH, 'media'),
+    chartkick.js(),
 )
 
 # List of finder classes that know how to find static files in
@@ -122,6 +124,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     #'django.contrib.admindocs',
     'MainApp',
+    'chartkick',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

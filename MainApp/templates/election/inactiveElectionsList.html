@@ -5,6 +5,6 @@
 
 {% block upcontent %}
 {% for inactive in inactive_elections %}
-<li><a href="/election/electionView/?election={{ inactive.id }}">{{ inactive.name }}</a></li>
+<li><a href="/election/electionView/{{ inactive.id }}">{{ inactive.name }}</a></li>
 {% endfor %}
 {% endblock %}
