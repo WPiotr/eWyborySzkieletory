@@ -108,8 +108,8 @@ class UserVote(models.Model):
         ordering = ['elections', 'candidate']
 
     def __unicode__(self):
-        return 'Wybory %s na %s. /n Użytkownik %s oddał głos na %s : %s.' \
-    % (self.elections.type, self.elections.name, self.user.name, self.candidate, self.when)
+        return 'Wybory %s na %s. /n Użytkownik %soddał głos na %s : %s.' \
+    % (self.elections.type, self.elections.name, self.user.first_name + " " + self.user.last_name, self.candidate, self.when)
 
 
 class electionsCandidate(models.Model):

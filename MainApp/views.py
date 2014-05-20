@@ -30,18 +30,19 @@ def electionView(request, election):
     elections = getActiveElections()
     ele_id = election
     ele = Elections.objects.filter(id=ele_id)
+    
     candidate_list = electionsCandidate.objects.filter(elections=ele_id)
+    election = ele[0]
+    u = request.user
+    if(election.canVote(u)):
+        return render_to_response('election/electionVote.html',{'local': locals(),'cand_list':candidate_list, 'election':election, 'elections': elections, 'user': u})
     chartList = dict()
     for cand in candidate_list :
         chartList[cand.candidate.user.first_name + " " + cand.candidate.user.last_name] = cand.voteCount
-    election = ele[0]
-    u = request.user
     library = { 
                "backgroundColor": "#c7d9c3",
                "legend": {"position": "top"},
                }
-    if(election.canVote(u)):
-        return render_to_response('election/electionVote.html',{'local': locals(),'cand_list':candidate_list, 'election':ele, 'elections': elections})
     return render_to_response('election/electionView.html',{'local': locals(),'cand_list':candidate_list, 'election':ele, 'elections': elections, 'chartList': chartList, 'library': library,})
 
 def activeElections(request):
@@ -64,6 +65,20 @@ def registerUser(request):
                 user.save()
                 user = auth.authenticate(username=request.POST['userName'], password=request.POST['password'])
                 auth.login(request, user)
+    return redirect('/')
+
+def electionVote(request):
+    elections = getActiveElections()
+    current_user = request.user
+    checkedList = request.POST.getlist('candidate_id')
+    election_unicode = request.POST['ele']
+    election = elections[0]
+    for e in elections:
+        if e.__unicode__ == election_unicode:
+            election = e
+    for checked in checkedList:
+        print checked
+        Elections.vote(election, current_user, checked)
     return redirect('/')
 
 def login(request):
