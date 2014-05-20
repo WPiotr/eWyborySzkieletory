@@ -74,6 +74,10 @@ class Elections (models.Model):
             raise Exception("Użytkownik już głosował na tego kandydata w tych wyborach")
         user_vote = UserVote(user=user, elections=self, candidate=candidate, when=datetime.datetime.now())
         user_vote.save()
+        election_candidate=electionsCandidate.objects.filter(candidate=candidate,elections=self)
+        election_candidate=election_candidate[0]
+        election_candidate.voteCount+=1
+        election_candidate.save()
         return 0
 
     def getVoteCount(self,candidate):
@@ -108,8 +112,9 @@ class UserVote(models.Model):
         ordering = ['elections', 'candidate']
 
     def __unicode__(self):
-        return 'Wybory %s na %s. /n Użytkownik %soddał głos na %s : %s.' \
-    % (self.elections.type, self.elections.name, self.user.first_name + " " + self.user.last_name, self.candidate, self.when)
+        return 'Wybory %s na %s. /n Użytkownik %s oddał głos na %s : %s.' \
+    % (self.elections.type, self.elections.name, self.user, self.candidate, self.when)
+
 
 
 class electionsCandidate(models.Model):
