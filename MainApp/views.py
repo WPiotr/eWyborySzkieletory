@@ -1,4 +1,4 @@
-from MainApp.models import Elections
+from MainApp.models import Elections, Candidate
 from _threading_local import local
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.views import logout
@@ -52,6 +52,7 @@ def activeElections(request):
 def inactiveElections(request):
     elections = getActiveElections()
     inactive_elections = getInActiveElections()
+    inactive_elections[0]
     return render_to_response('election/inactiveElectionsList.html',{'local': locals(), 'elections': elections, 'inactive_elections': inactive_elections})
 
 def registerUser(request):
@@ -71,15 +72,26 @@ def electionVote(request):
     elections = getActiveElections()
     current_user = request.user
     checkedList = request.POST.getlist('candidate_id')
-    election_unicode = request.POST['ele']
-    election = elections[0]
-    for e in elections:
-        if e.__unicode__ == election_unicode:
-            election = e
-    for checked in checkedList:
-        print checked
-        Elections.vote(election, current_user, checked)
-    return redirect('/')
+    election = request.POST['election']
+    election = Elections.objects.filter(id=election)
+    election = election[0]
+    for candidate_id in checkedList:
+        print candidate_id
+        candidate = Candidate.objects.filter(id=candidate_id)
+        candidate = candidate[0]
+        election.vote(current_user, candidate)
+    
+    ele_id = election.id
+    candidate_list = electionsCandidate.objects.filter(elections=ele_id)
+    chartList = dict()
+    for cand in candidate_list :
+        chartList[cand.candidate.user.first_name + " " + cand.candidate.user.last_name] = cand.voteCount
+    library = { 
+               "backgroundColor": "#c7d9c3",
+               "legend": {"position": "top"},
+               }
+    return render_to_response('election/electionView.html',{'local': locals(),'cand_list':candidate_list, 'election':election, 'elections': elections, 'chartList': chartList, 'library': library,})
+
 
 def login(request):
     elections = getActiveElections()
@@ -116,5 +128,5 @@ def getActiveElections():
 
 def getInActiveElections():
     now = datetime.datetime.utcnow().replace(tzinfo=utc)
-    elections = Elections.objects.extra(where=['end_elections<%s', 'start_elections>%s'], params=[now,now])
+    elections = Elections.objects.extra(where=['end_elections<%s OR start_elections>%s'], params=[now,now])
     return elections

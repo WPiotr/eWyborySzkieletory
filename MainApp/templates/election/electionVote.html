@@ -9,9 +9,9 @@ Głosowanie w wyborach {{election.name}}
 {% block upcontent %}
 <form method="post" action="/election/electionVote/">
 	<table>
-		<input type="hidden" name="ele" value="{{election}}"/>
+		<input type="hidden" name="election" value="{{election.id}}"/>
 		{% for Candidate in cand_list %}
-		<tr><td><input type="checkbox" name="candidate_id" value={{Candidate.candidate.user}}>{{Candidate.candidate.user.first_name}} {{Candidate.candidate.user.last_name}}</td></tr>
+		<tr><td><input type="checkbox" name="candidate_id" value="{{Candidate.candidate.id}}">{{Candidate.candidate.user.first_name}} {{Candidate.candidate.user.last_name}}</td></tr>
 		<br>{% endfor %}
 		<tr>
 			<td><input type="submit" value="OK" /></td>

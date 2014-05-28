@@ -53,18 +53,86 @@
 		"date_joined": "2014-05-18T16:01:07.856Z"
 		}
 	},
+	{
+	"pk": 5, 
+	"model": "auth.user", 
+	"fields": {
+		"username": "user4", 
+		"first_name": "Name4", 
+		"last_name": "LastName4", 
+		"is_active": true, 
+		"is_superuser": false, 
+		"is_staff": false, 
+		"last_login": "2014-05-18T16:01:07.856Z", 
+		"groups": [], 
+		"user_permissions": [], 
+		"password": "pbkdf2_sha256$10000$whIzxsDpXYh1$RAapMuxrBc5j9bLKaVCuAyByc96TO00iIKT7x0Frr/Q=", 
+		"email": "", 
+		"date_joined": "2014-05-18T16:01:07.856Z"
+		}
+	},
+	{
+	"pk": 6, 
+	"model": "auth.user", 
+	"fields": {
+		"username": "user5", 
+		"first_name": "Name5", 
+		"last_name": "LastName5", 
+		"is_active": true, 
+		"is_superuser": false, 
+		"is_staff": false, 
+		"last_login": "2014-05-18T16:01:07.856Z", 
+		"groups": [], 
+		"user_permissions": [], 
+		"password": "pbkdf2_sha256$10000$whIzxsDpXYh1$RAapMuxrBc5j9bLKaVCuAyByc96TO00iIKT7x0Frr/Q=", 
+		"email": "", 
+		"date_joined": "2014-05-18T16:01:07.856Z"
+		}
+	},
+	{
+	"pk": 7, 
+	"model": "auth.user", 
+	"fields": {
+		"username": "user6", 
+		"first_name": "Name6", 
+		"last_name": "LastName6", 
+		"is_active": true, 
+		"is_superuser": false, 
+		"is_staff": false, 
+		"last_login": "2014-05-18T16:01:07.856Z", 
+		"groups": [], 
+		"user_permissions": [], 
+		"password": "pbkdf2_sha256$10000$whIzxsDpXYh1$RAapMuxrBc5j9bLKaVCuAyByc96TO00iIKT7x0Frr/Q=", 
+		"email": "", 
+		"date_joined": "2014-05-18T16:01:07.856Z"
+		}
+	},
     {
     "model": "MainApp.Candidate",
     "pk": 0,
     "fields": {
-        "user": 2
+        "user": 1
  	    }
     },
     {
     "model": "MainApp.Candidate",
     "pk": 1,
     "fields": {
+        "user": 2
+ 	    }
+    },
+    {
+    "model": "MainApp.Candidate",
+    "pk": 2,
+    "fields": {
         "user": 3
+ 	    }
+    },
+    {
+    "model": "MainApp.Candidate",
+    "pk": 3,
+    "fields": {
+        "user": 4
  	    }
     },
     {
@@ -74,7 +142,7 @@
       "name": "Wybory pierwsze",
       "type": "Wybory pierwsze",
       "whitelist_on": true,
-      "whitelist": [1,2],
+      "whitelist": [1,2,3,4],
       "allowed_votes_count": 2,
       "start_elections": "2011-09-01T13:20:30+03:00",
       "end_elections": "2016-09-01T13:20:30+03:00"
@@ -88,7 +156,7 @@
       "type": "Wybory drugie",
       "whitelist_on": false,
       "whitelist": [],
-      "allowed_votes_count": 1,
+      "allowed_votes_count": 2,
       "start_elections": "2011-09-01T13:20:30+03:00",
       "end_elections": "2016-09-01T13:20:30+03:00"
     	}
@@ -99,6 +167,51 @@
     "fields": {
         "elections": 1,
         "candidate": 1,
+        "voteCount": 0
+    	}
+    },
+    {
+    "model": "MainApp.electionsCandidate",
+    "pk": 2,
+    "fields": {
+        "elections": 1,
+        "candidate": 2,
+        "voteCount": 0
+    	}
+    },
+    {
+    "model": "MainApp.electionsCandidate",
+    "pk": 3,
+    "fields": {
+        "elections": 1,
+        "candidate": 3,
+        "voteCount": 0
+    	}
+    },
+    {
+    "model": "MainApp.electionsCandidate",
+    "pk": 4,
+    "fields": {
+        "elections": 2,
+        "candidate": 0,
+        "voteCount": 0
+    	}
+    },
+    {
+    "model": "MainApp.electionsCandidate",
+    "pk": 5,
+    "fields": {
+        "elections": 2,
+        "candidate": 1,
+        "voteCount": 0
+    	}
+    },
+    {
+    "model": "MainApp.electionsCandidate",
+    "pk": 6,
+    "fields": {
+        "elections": 2,
+        "candidate": 2,
         "voteCount": 0
     	}
     }

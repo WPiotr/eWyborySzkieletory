@@ -52,12 +52,14 @@ class Elections (models.Model):
         now = datetime.datetime.utcnow().replace(tzinfo=utc)
         if((self.end_elections - now).total_seconds() < 0):
             return False
+        if(UserVote.objects.filter(user=user,elections=self).exists()):
+            return False
         if((self.start_elections - now).total_seconds() > 0):
             return False
         if(self.whitelist_on):
             if(not self.whitelist.filter(id=user.id)):
                 return False 
-        if(UserVote.objects.filter(user=user).count() >= self.allowed_votes_count):
+        if(UserVote.objects.filter(user=user, elections=self).count() >= self.allowed_votes_count):
             return False
         return True
         
@@ -68,9 +70,9 @@ class Elections (models.Model):
         Użytkownik podany w parametrze głosuje na kandydata podanego w parametrze w bierzących wyborach
         @param User user - sprawdzany użytkownik 
         """
-        if(not self.canVote(user)):
+        if(UserVote.objects.filter(user=user, elections=self).count() >= self.allowed_votes_count):
             raise Exception("Użytkownik nie może głosować w tych wyborach")
-        if(UserVote.objects.filter(user=user, candidate=candidate).exists()):
+        if(UserVote.objects.filter(user=user, candidate=candidate, elections=self).exists()):
             raise Exception("Użytkownik już głosował na tego kandydata w tych wyborach")
         user_vote = UserVote(user=user, elections=self, candidate=candidate, when=datetime.datetime.now())
         user_vote.save()
